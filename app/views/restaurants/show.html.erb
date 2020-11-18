@@ -6,8 +6,11 @@
 <ul>
 <% @restaurant.reviews.each do |review| %>
 <li><%= review.content %></li>
+<li><%= review.rating %></li>
 <% end %>
 </ul>
 
 <p><%= link_to "leave a review", new_restaurant_review_path(@restaurant) %></p>
+<p><%= link_to "Back to the overview", restaurants_path %></p>
 
+<%= render partial: './reviews/form', restaurant: @restaurant, review: @review %>
